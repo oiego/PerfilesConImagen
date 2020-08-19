@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- in thymeleaf we need to close / in every tag -->
+<meta charset="UTF-8" />
+<title>Enviar del request HTTP GET - URL</title>
+</head>
+<body>
+
+	<ul>
+		<li>
+		<a th:href="@{/params/string(texto='hola Diegos')}">/params/string?texto=hola diego</a>
+		<a th:href="@{/params/string(texto='que tal jhon')}">/params/string?texto=que tal jhon</a>
+		</li>
+	</ul>
+
+
+</body>
+</html>

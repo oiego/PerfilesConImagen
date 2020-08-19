@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- in thymeleaf we need to close / in every tag -->
+<meta charset="UTF-8" />
+<title th:text="${titulo}"></title>
+</head>
+<body>
+	<h1 th:text="${titulo}"></h1>
+
+	<div th:if="${usuarios.size() == 0}">No hay usuarios en la lista</div>
+	<!-- Los usuarios estarán disponibles desde cualquier lugar porque declaramos @ModelAttribute para tenerlso disponible en común a todos los métodos -->
+	
+	<table th:if="${!usuarios.isEmpty()}">
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Ap</th>
+				<th>email</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="usuario: ${usuarios}">
+				<td th:text="${usuario.nombre}"></td>
+				<td th:text="${usuario.app}"></td>
+				<td th:text="${usuario.email}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
